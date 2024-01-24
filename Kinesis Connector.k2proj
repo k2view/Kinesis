@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Kinesis Connector</Name>
+  <ProductVersion>7.2.1_103</ProductVersion>
+  <Mdm>false</Mdm>
+  <DataChangeIndicators>
+    <DataChange name="Search" enabled="true">
+      <Options>
+        <option>keyword</option>
+        <option>data</option>
+        <option>date</option>
+      </Options>
+    </DataChange>
+  </DataChangeIndicators>
+</Project>

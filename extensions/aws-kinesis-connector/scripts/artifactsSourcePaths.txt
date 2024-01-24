@@ -1,0 +1,4 @@
+Implementation/SharedObjects/Java/src/com/k2view/cdbms/usercode/common/kinesis
+Implementation/SharedObjects/Interfaces/GenericInterfaces/Kinesis.k2interface.xml
+Implementation/SharedObjects/Broadway/kinesis
+lib/Kinesis-1.0-SNAPSHOT.jar

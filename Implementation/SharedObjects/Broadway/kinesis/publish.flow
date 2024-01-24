@@ -1,0 +1,223 @@
+{
+    "tags": [
+        "kinesis"
+    ],
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "FromTo",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "from",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "integer"
+                                        },
+                                        "const": 0
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "to",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "integer"
+                                        },
+                                        "const": 10
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Loop",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "ForLoop1",
+                            "actorType": {
+                                "parentType": "ForLoop",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Message Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PartitionKey",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Message",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "test_message_${0}"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Publish to kinesis",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Publish1",
+                            "actorType": {
+                                "parentType": "Publish",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "Kinesis"
+                                    },
+                                    {
+                                        "name": "topic",
+                                        "const": "faress"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "from",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "ForLoop1",
+                "name": "from"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "to",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "ForLoop1",
+                "name": "to"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ForLoop1",
+                "name": "i"
+            },
+            "rightPort": {
+                "actor": "PartitionKey",
+                "name": "value"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "ForLoop1",
+                "name": "i"
+            },
+            "rightPort": {
+                "actor": "Message",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "PartitionKey",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Publish1",
+                "name": "key"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Message",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Publish1",
+                "name": "message"
+            }
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItemsProperties xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>ItemsProperties</Name>
+  <ProjectItemPropList>
+    <ProjectItemProp>
+      <NodeName>KCLApplication.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis\consumer&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\consumer\KCLApplication</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis@consumer</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>KCLRecordProcessorFactory.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis\consumer&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\consumer\KCLRecordProcessorFactory</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis@consumer</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>KinesisConsumer.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis\consumer&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\consumer\KinesisConsumer</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis@consumer</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>KinesisConsumerDefaults.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis\consumer&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\consumer\KinesisConsumerDefaults</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis@consumer</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>KinesisIoProvider.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\KinesisIoProvider</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>KinesisPublisher.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis\producer&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\producer\KinesisPublisher</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis@publisher</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>KinesisSession.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\KinesisSession</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>KinesisPublisherDefaults.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis\producer&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\producer\KinesisPublisherDefaults</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis@publisher</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>&lt;span style="background-color: #707070; color: #00b4e2"&gt;&amp;nbsp;kinesis&amp;nbsp;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;span style="color: #00b4e2"&gt;SharedLogic.java&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\SharedLogic</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis</CategoryKey>
+    </ProjectItemProp>
+    <ProjectItemProp>
+      <NodeName>AWSClientBuilder.java&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 12px;color: #aaaaaa;"&gt;com\k2view\cdbms\usercode\common\kinesis&lt;/span&gt;</NodeName>
+      <RelativePath>Implementation\SharedObjects\Java\src\com\k2view\cdbms\usercode\common\kinesis\AWSClientBuilder</RelativePath>
+      <CategoryKey>Implementation\SharedObjects\Java\src@kinesis</CategoryKey>
+    </ProjectItemProp>
+  </ProjectItemPropList>
+  <ProjectItemsCategoryList>
+    <ProjectItemsCategory>
+      <Name>kinesis</Name>
+      <Key>Implementation\SharedObjects\Java\src@kinesis</Key>
+    </ProjectItemsCategory>
+    <ProjectItemsCategory>
+      <Name>consumer</Name>
+      <Key>Implementation\SharedObjects\Java\src@kinesis@consumer</Key>
+    </ProjectItemsCategory>
+    <ProjectItemsCategory>
+      <Name>publisher</Name>
+      <Key>Implementation\SharedObjects\Java\src@kinesis@publisher</Key>
+    </ProjectItemsCategory>
+  </ProjectItemsCategoryList>
+</ProjectItemsProperties>

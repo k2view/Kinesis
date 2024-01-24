@@ -1,0 +1,17 @@
+{
+  "name": "Fabric-Data-Dictionary",
+  "nodes": [
+    {
+      "type": "SCHEMA",
+      "id": "PROJECT:Kinesis.SCHEMA:k2_ws",
+      "name": "k2_ws",
+      "project": "Kinesis",
+      "links": [
+        {
+          "type": "CONTAINED",
+          "other": "PROJECT:Kinesis"
+        }
+      ]
+    }
+  ]
+}

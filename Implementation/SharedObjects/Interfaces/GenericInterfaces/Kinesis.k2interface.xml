@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GenericInterface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="CUSTOM" displayName="" enabled="true" version="1.4">
+    <Name>Kinesis</Name>
+    <Properties>
+        <Property name="Host">
+            <Value>eu-central-1</Value>
+        </Property>
+        <Property name="Port">
+            <Value>0</Value>
+        </Property>
+        <Property name="User">
+            <Value></Value>
+        </Property>
+        <Property name="Password">
+            <Value></Value>
+        </Property>
+        <Property name="Data">
+            <Value>{&quot;consumer&quot;:{&quot;CONSUMER_TYPE&quot;:&quot;SHARED_THROUGHPUT&quot;, &quot;INITIAL_POSITION_IN_STREAM&quot;:&quot;LATEST&quot;}}</Value>
+        </Property>
+        <Property name="ioprovider">
+            <Value>kinesisIoProvider</Value>
+        </Property>
+        <Property name="TechType">
+            <Value></Value>
+        </Property>
+    </Properties>
+</GenericInterface>

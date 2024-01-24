@@ -1,0 +1,191 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Parameters",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "remark": "This flow will run automatically during deploy.\nIt will not run in case of soft deploy.\nIf the deploy command contains custom parameters, they can be accessed as additional external parameters with the same name. You can use the constants below, or use the external names in other actors. \n",
+                    "actors": [
+                        {
+                            "name": "lu_name",
+                            "remark": "This field contains the name of deployed LU",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "nosync",
+                            "remark": "NOSYNC TRUE: Only schema changes trigger sync after deploy.\nNOSYNC FALSE: Any deploy (even without any changes) triggers sync on the first time instance is accessed.",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "is_first_deploy",
+                            "remark": "A boolean representing if this is the first deploy",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "is_studio",
+                            "remark": "Will be true if this is the studio debug environment fabric instance",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "BroadwayJob1",
+                            "actorType": {
+                                "parentType": "BroadwayJob",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "InterfaceListener1",
+                            "actorType": {
+                                "parentType": "InterfaceListener",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "lu_name"
+            },
+            "rightPort": {
+                "actor": "lu_name",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "nosync"
+            },
+            "rightPort": {
+                "actor": "nosync",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "is_first_deploy"
+            },
+            "rightPort": {
+                "actor": "is_first_deploy",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "is_studio"
+            },
+            "rightPort": {
+                "actor": "is_studio",
+                "name": "value"
+            }
+        }
+    ]
+}

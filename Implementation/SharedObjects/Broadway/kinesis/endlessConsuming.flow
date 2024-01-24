@@ -1,0 +1,76 @@
+{
+    "tags": [
+        "kinesis"
+    ],
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Subscribe to Kinesis",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Subscribe2",
+                            "actorType": {
+                                "parentType": "Subscribe",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "Kinesis"
+                                    },
+                                    {
+                                        "name": "topic",
+                                        "const": "faress"
+                                    },
+                                    {
+                                        "name": "group_id",
+                                        "const": "faress_622"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Log messages",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Logger1",
+                            "actorType": {
+                                "parentType": "Logger",
+                                "inputs": [
+                                    {
+                                        "name": "level",
+                                        "const": "info"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Subscribe2",
+                "name": "message"
+            },
+            "rightPort": {
+                "actor": "Logger1",
+                "name": "message"
+            },
+            "iterate": "Iterate"
+        }
+    ]
+}

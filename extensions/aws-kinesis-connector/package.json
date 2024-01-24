@@ -1,0 +1,66 @@
+{
+    "name": "aws-kinesis-connector",
+    "displayName": "AWS Kinesis Connector",
+    "description": "Fabric connector to AWS Kinesis data streams",
+    "publisher": "K2View",
+    "version": "0.0.1",
+    "preview": true,
+    "engines": {
+        "vscode": "^1.79.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "k2-exchange"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/k2view/Kinesis.git"
+    },
+    "icon": "icon.png",
+    "main": "./dist/extension.js",
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "contributes": {
+        "commands": [
+            {
+                "command": "aws-kinesis-connector.artifacts.import",
+                "title": "Import Lib Artifacts",
+                "category": "Fabric-AWS Kinesis Connector"
+            },
+            {
+                "command": "aws-kinesis-connector.artifacts.delete",
+                "title": "Delete Lib Artifacts",
+                "category": "Fabric-AWS Kinesis Connector"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run package",
+        "compile": "webpack",
+        "watch": "webpack --watch",
+        "package": "webpack --mode production --devtool hidden-source-map",
+        "lint": "eslint src --ext ts",
+        "fabric-lib-prepare": "node scripts/createSymlinks.js scripts/artifactsSourcePaths.txt false && node scripts/createSymlinks.js scripts/templatesSourcePaths.txt true",
+        "fabric-lib-package": "npm run fabric-lib-prepare && vsce package",
+        "fabric-lib-publish": "npm run fabric-lib-prepare && npx ovsx publish -p $k2view_ovsx_token -r $k2view_ovsx_url --baseContentUrl $k2view_ovsx_url",
+        "fabric-lib-k2export": "npm run fabric-lib-prepare && node scripts/create-k2export.js $npm_package_name-$npm_package_version.k2export"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.79.0",
+        "@types/node": "16.x",
+        "@typescript-eslint/eslint-plugin": "^6.4.1",
+        "@typescript-eslint/parser": "^6.4.1",
+        "eslint": "^8.47.0",
+        "glob": "^10.3.3",
+        "typescript": "^5.1.6",
+        "ts-loader": "^9.4.4",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4",
+        "vsce": "^2.15.0",
+        "ovsx": "^0.8.3"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Fabric-Data-Dictionary",
+  "nodes": [
+    {
+      "type": "PROJECT",
+      "id": "PROJECT:Kinesis",
+      "name": "Kinesis",
+      "project": "Kinesis",
+      "properties": {
+        "Active Environment": "_dev"
+      }
+    }
+  ]
+}

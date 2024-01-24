@@ -1,0 +1,15 @@
+name,pattern,score
+DATE_OF_BIRTH,"\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b",0.87
+CREDIT_CARD,"\b(?:\d[ -]*?){13,16}\b",0.8
+DRIVER_LICENSE,"\b[A-Z]{1,2}\d{1,6}[A-Z]?\b",0.9
+STATE,\b[A-Z]{2}\b,0.9
+PASSPORT,\b[A-Z]{2}[0-9]{7}\b,0.89
+ZIP_CODE,\b\d{5}(?:-\d{4})?\b,0.2
+SOCIAL_SECURITY_NUMBER,(?!000|666)[0-8][0-9]{2}-?(?!00)[0-9]{2}-?(?!0000)[0-9]{4},0.8
+GENDER,(?i)(MALE|FEMALE),1
+RACE_ETHNICITY,(?i)(WHITE|BLACK|AFRICAN AMERICAN|AMERICAN INDIAN|ALASKA NATIVE|ASIAN|HAWAIIAN),1
+RELIGION,(?i)(Christian|Catholic|Jehovah's Witness|Jewish|Muslim|Buddhist|Hindu|Atheist|Agnostic),1
+EMAIL,"^[\w\-\+]+(\.[\w]+)*@[\w-]+(\.[\w]+)*(\.[a-z]{2,})$",1
+TELEPHONE_NUMBER,"^[+]?\d{0,3}[ ]?\d{10}|^[+]?\d{0,3}[ ]?(?:\d{3}-){2}\d{4}|^[+]?\d{0,3}[ ]?\(\d{3}\)[ ]?\d{3}-?\d{4}",0.6
+IP_ADDRESS,(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$,1
+MAC_ADDRESS,^([0-9A-F]{2}[:-]){5}([0-9A-F]{2})$,0.85

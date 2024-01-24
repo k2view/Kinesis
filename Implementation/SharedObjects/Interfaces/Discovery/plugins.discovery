@@ -1,0 +1,109 @@
+{
+	"name": "plugins_pipeline",
+	"description": "This file serves as a definition of Plugin Framework pipeline. Each plugin is a piece of business logic that executes predefined rules in order to complement the Discovery Schema. ",
+	"version": 1,
+	"sample_size": {
+		"percentage": 10,
+		"min_size": 100,
+		"max_size": 10000
+	 },
+	  "data_platforms":{
+         "data_platform_1": {
+           "exclude_list": ["schema"]
+         },
+         "data_platform_2": {
+           "include_list": ["main.PATIENT","main.INVOICE"]
+         },
+         "description": "<interface_1>/<interface_2> are placeholders for interface name defined in Studio. The <exclude_list> filter excludes schemas in the format: <schema> and tables in the format <schema>.<table> or *.<table>. The <include_list> filter includes only schemas in the format: <schema>, and tables in the format: <schema>.<table> or *.<table>"
+
+       },
+	"plugins": [{
+			"name": "Metadata Logical Reference",
+			"type": "plugin",
+			"class": "com.k2view.discovery.plugins.AddRelationsPlugin",
+			"active": true,
+			"threshold": 0.4,
+			"input_parameters": {
+			    "rules": {
+                          "field_name_is_id_and_pk": {
+                            "score": 0.8,
+                            "description": "Dataset1 has a PK field \"id\\“ and dataset2 has a field \\”dataset1id\\” (normalized)\n"
+                          },
+                          "field_name_is_id_and_not_pk": {
+                            "score": 0.6,
+                            "description": "Dataset1 has a non-PK field called \"id\\“ and dataset2 has a field called \\”dataset1id\\”"
+                          },
+                          "single_field_pk_and_not_pk": {
+                            "score": 0.8,
+                            "description": "Dataset1 has a PK field and dataset2 has a field with the same name (normalized), non-PK"
+                          },
+                          "common_fields_in_both_pk": {
+                            "score": 0.8,
+                            "description": "Common fields which a part of PK in both datasets, but dataset1 has less PKs than dataset2"
+                          },
+                          "same_field_names_pk": {
+                            "score": 0.4,
+                            "description": "Common fields, a part of PK in both datasets, and both datasets have identical number of PKs"
+                          },
+                          "same_field_names_not_pk": {
+                            "score": 0.2,
+                            "description": "Both datasets have fields with the same names (normalized, not in field_name_blk), both are non-PK"
+                          }
+                        },
+				"field_name_exclude_list": [
+					"name",
+					"username"
+				],
+				"field_type_exclude_list": [
+					"float",
+					"char"
+				]
+			}
+		},
+		{
+			"name": "Data Regex Classifier",
+			"type": "plugin",
+			"class": "com.k2view.discovery.plugins.DataProfilingPlugin",
+			"active": true,
+			"factor": 0.2,
+			"threshold": 0.4,
+			"input_parameters": {}
+		},
+		{
+			"name": "Metadata Regex Classifier",
+			"type": "plugin",
+			"class": "com.k2view.discovery.plugins.profiling.MetadataProfilingPlugin",
+			"active": true,
+			"factor": 0.2,
+			"threshold": 0.4,
+			"input_parameters": {}
+		},
+		{
+			"name": "Classification PII Marker",
+			"type": "plugin",
+			"class": "com.k2view.discovery.plugins.PIIAnalyzerPlugin",
+			"active": true,
+			"factor": 0.2,
+			"threshold": 0.2,
+			"input_parameters": {}
+		},
+		{
+			"name": "NULL Percentage",
+			"type": "plugin",
+			"class": "com.k2view.discovery.plugins.nulls.NullPercentagePlugin",
+			"active": true,
+			"factor": 0.2,
+			"threshold": 0.2,
+			"input_parameters": {}
+		},
+		{
+			"name": "Custom Property Addition",
+			"type": "plugin",
+			"class": "com.k2view.discovery.plugins.CustomPropertyPlugin",
+			"active": false,
+			"factor": 0.2,
+			"threshold": 0.4,
+			"input_parameters": {}
+		}
+	]
+}

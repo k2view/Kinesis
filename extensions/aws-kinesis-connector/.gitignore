@@ -1,0 +1,11 @@
+.git
+.svn
+*.DS_Store
+.DS_Store
+*.zip
+node_modules
+dist
+out
+*.vsix
+artifacts
+.vscode
