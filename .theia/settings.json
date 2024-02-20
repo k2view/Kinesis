@@ -26,7 +26,9 @@
         "/opt/apps/fabric/workspace/fabric/lib/fabric/guava*.jar",
 		"/opt/apps/fabric/workspace/fabric/lib/fabric/cron-utils*.jar",
         "/opt/apps/fabric/workspace/fabric/lib/provided/*.jar",
-        "lib/*.jar"
+        "lib/*.jar",
+        // AWS dependencies
+        "/opt/apps/fabric/workspace/fabric/lib/fabric/*-2.22.9.jar",
     ],
     "java.project.outputPath": ".studioWeb/java/bin",
     "java.project.sourcePaths": [

@@ -93,9 +93,8 @@ public class KinesisConsumer implements IoMessageSubscriber, PubSub {
         }
     }
 
-    @SuppressWarnings("unchecked")
     private void initIterators() {
-        this.iteratorBatch = new SupplierIterator(this::poll);
+        this.iteratorBatch = new SupplierIterator<>(this::poll);
         this.iterableBatch = () -> this.iteratorBatch;
     }
 
@@ -121,7 +120,7 @@ public class KinesisConsumer implements IoMessageSubscriber, PubSub {
         this.waitForKclInit();
     }
 
-    public Iterable<Record> poll() {
+    public PayLoadBatchImpl poll() {
         this.prePoll();
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<PayLoadBatchImpl> future = executorService.submit(() -> {
