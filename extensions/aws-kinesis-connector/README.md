@@ -17,7 +17,7 @@ Any of the 6 methods mentioned in [Default Credential Provider Chain](https://do
 As for what is recommended, 6th is preferred when running on EC2 instances, and 5th in the case of container.
 
 ## How to Use
-1. Either create a new Kinesis custom interface, or reuse the example interface provided:
+1. Create a new Kinesis custom interface:
    - Set the IoProvider Function to "kinesisIoProvider"
    - Set the Tech Category to "PubSub" (in order to let the relevant actors find it).
    - Specify the AWS region in the "Host" section (If you don’t explicitly set it, the AWS SDK consults the [Default Region Provider Chain](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/region-selection.html#automatically-determine-the-aws-region-from-the-environment) to try and determine the region to use).

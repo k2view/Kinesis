@@ -15,20 +15,8 @@
         "/opt/apps/fabric/workspace/fabric/lib/fabric/fabricdb*.jar",
         "/opt/apps/fabric/workspace/fabric/lib/fabric/broadway*.jar",
 		"/opt/apps/fabric/workspace/fabric/lib/fabric/graphit*.jar",
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/commons-io-*.jar",
-		"/opt/apps/fabric/workspace/fabric/lib/fabric/commons-lang*.jar",
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/commons-configuration2*.jar",
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/handlebars*.jar",
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/tomcat-servlet*.jar",
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/jsch*.jar",
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/json*.jar",
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/kafka*.jar",
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/guava*.jar",
-		"/opt/apps/fabric/workspace/fabric/lib/fabric/cron-utils*.jar",
         "/opt/apps/fabric/workspace/fabric/lib/provided/*.jar",
-        "lib/*.jar",
-        // AWS dependencies
-        "/opt/apps/fabric/workspace/fabric/lib/fabric/*-2.22.9.jar",
+        "lib/*.jar"
     ],
     "java.project.outputPath": ".studioWeb/java/bin",
     "java.project.sourcePaths": [

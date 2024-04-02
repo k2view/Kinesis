@@ -74,7 +74,7 @@ class KCLRecordProcessorFactory implements ShardRecordProcessorFactory {
         public void shardEnded(ShardEndedInput shardEndedInput) {
             try {
                 log.debug("Reached shard end, so checkpointing.{}", logSuffix);
-                // TODO: Since we must checkpoint, how does this affect transactions?
+                // Since we must checkpoint, how does this affect transactions?
                 shardEndedInput.checkpointer().checkpoint();
                 consumer.removeCheckpointer(shardId);
             } catch (Exception e) {

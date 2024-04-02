@@ -137,7 +137,7 @@ class KCLApplication implements Runnable {
                 }
                 return pollingConfig;
             } else if (type.equals(ConsumerType.ENHANCED_FAN_OUT)) return null;
-            // TODO set maxRecords for FanOutConfig
+            // TO-DO set maxRecords for FanOutConfig
             //  https://github.com/awslabs/amazon-kinesis-client/issues/798
             // If retrievalSpecificConfig=null, it will be overridden by a FanOutConfig
             throw new IllegalArgumentException(

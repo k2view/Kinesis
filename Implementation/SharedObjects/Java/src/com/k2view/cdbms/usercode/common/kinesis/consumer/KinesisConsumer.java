@@ -149,7 +149,7 @@ public class KinesisConsumer implements IoMessageSubscriber, PubSub {
     }
 
     private void waitForKclInit() {
-        // TODO add timeout for init
+        // TO-DO add timeout for init
         if (this.kclInitNotDone()) {
             if (!this.kclApplication.wasRunTriggered()) this.kclApplication.run();
             log.debug("Waiting for KCL application instance initialization (application={})..", this.applicationName);

@@ -51,7 +51,6 @@ public class KinesisPublisher implements IoMessagePublisher, PubSub {
     @Override
     public void send(Object message, Map<String, Object> params) throws ExecutionException, InterruptedException, KinesisPublisherException {
         if (!this.autoCommit.get()) {
-            // TODO not a real transaction - is that fine?
             if (lastFuture != null && lastFuture.isDone()) {
                 // Check last request status to avoid accumulating more data if it failed
                 awaitAndHandleResponse();
@@ -69,7 +68,7 @@ public class KinesisPublisher implements IoMessagePublisher, PubSub {
                 this.lastFuture = putRecordsAsync();
             }
         } else {
-            // TODO - sendSync is slow - what can be improved?
+            // TO-DO - sendSync is slow - what can be improved?
             //  1. Make it an async PutRecord call while holding a Future queue? (as in a Kafka async transaction)
             //      If so, why wasn't this done in Kafka async non-transaction?
             //  2. Behave the same as in transaction (i.e. async PutRecords), and handle the last uncommitted batch on close?

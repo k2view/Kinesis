@@ -1,7 +1,7 @@
 {
     "name": "aws-kinesis-connector",
-    "displayName": "AWS Kinesis Connector",
-    "description": "Fabric connector to AWS Kinesis data streams",
+    "displayName": "AWS Kinesis Data Streams Connector",
+    "description": "Fabric connector to AWS Kinesis Data Streams",
     "publisher": "K2View",
     "version": "0.0.1",
     "preview": true,
@@ -21,7 +21,7 @@
         "type": "git",
         "url": "https://github.com/k2view/Kinesis.git"
     },
-    "icon": "icon.png",
+    "icon": "kinesis.png",
     "main": "./dist/extension.js",
     "license": "SEE LICENSE IN LICENSE.txt",
     "contributes": {
