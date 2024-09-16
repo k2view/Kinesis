@@ -3,8 +3,12 @@
     "displayName": "AWS Kinesis Data Streams Connector",
     "description": "Fabric connector to AWS Kinesis Data Streams",
     "publisher": "K2View",
-    "version": "0.0.1",
-    "preview": true,
+    "version": "0.0.2",
+    "preview": false,
+    "config": {
+        "minRequiredFabricVersion": "7.2",
+        "confirmTargetLuForEachImportedLu": false
+    },
     "engines": {
         "vscode": "^1.79.0"
     },
